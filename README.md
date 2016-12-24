@@ -11,7 +11,9 @@ Independent Variables = 132 completely anonymized features, including 14 continu
 
 Models Used - Xgboost and Deep Neural Network Ensembles
 
-Rank Obtained - 1260/3300 (Top 41%)
+Xgboost model was used as a first layer model which was then blended into 5 other Deep Neural Network models in the second layer.
 
-Ranking can be significantly improved by further tuning and cross validations. However, due to limitations in computing power prevented
-it.
+Rank Obtained - 685/3300 (Top 21%)
+
+Ranking can be significantly improved by further tuning and cross validations. However, due to limitations in computing power
+it was not attempted
