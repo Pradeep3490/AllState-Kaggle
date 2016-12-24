@@ -1,6 +1,5 @@
 
-#Stacking -- Running xgboost again with dnn blend output as input variable
-
+#Stacking
 install.packages('zoo')
 setwd("/Users/jp/Documents/Kaggle/All State Severity Claims")
 
@@ -117,7 +116,7 @@ amo.fairobj2 <- function(preds, dtrain) {
 xgb_params = list(
   colsample_bytree = 0.7,
   subsample = 0.7,
-  eta = 0.03, # replace this with 0.01 for local run to achieve 1113.93
+  eta = 0.03, 
   objective = amo.fairobj2,
   max_depth = 12,
   alpha = 1,
@@ -387,9 +386,6 @@ pred_all<-exp((pred_dnn_1+pred_dnn_2+pred_dnn_3+pred_dnn_4+pred_dnn_5)/5)
 # Write submissions
 SUBMISSION_FILE$loss = pred_all
 write.csv(SUBMISSION_FILE, 'h2o_dnn_stacking_secondlevel_output-v2.csv', row.names=FALSE)
-
-
-
 
 
 
